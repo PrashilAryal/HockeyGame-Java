@@ -72,7 +72,6 @@ public class Player extends Rectangle{
 
     public void draw(Graphics g){
         if(id==1) {
-            System.out.println("hi");
             player1Image = new ImageIcon("Player1.png").getImage();
             g.drawImage(player1Image,x,y, width, height, null);
         }

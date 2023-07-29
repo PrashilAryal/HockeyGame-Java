@@ -97,6 +97,12 @@ public class GamePanel extends JPanel implements Runnable{
             draw(g);
 
             playButton.setLabel("Play Again");
+            playButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    GameFrame frame2 = new GameFrame();
+                }
+            });
             this.add(playButton);
             playButton.setBounds((GAME_WIDTH/2)-50,(GAME_HEIGHT/2)+100,100,50);
             playButton.setForeground(Color.white);
@@ -164,7 +170,7 @@ public class GamePanel extends JPanel implements Runnable{
         if(ball.x<=0){
             playSound(scoreFile);
             score.scorePlayer2++;
-            if(score.scorePlayer2>=1){
+            if(score.scorePlayer2>=5){
                 playSound(gameOverFile);
                 gameOver();
             }
@@ -175,7 +181,7 @@ public class GamePanel extends JPanel implements Runnable{
         if(ball.x>=GAME_WIDTH-BALL_DIAMETER){
             playSound(scoreFile);
             score.scorePlayer1++;
-            if(score.scorePlayer1>=1){
+            if(score.scorePlayer1>=5){
                 playSound(gameOverFile);
                 gameOver();
             }
